@@ -1253,18 +1253,18 @@ ol {
 /*======================================
 	Footer CSS
 ========================================*/
-form.formConnectFood {
+form#formConnectFood {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-form.formConnectFood div {
+form#formConnectFood div {
   display: flex;
   flex-direction: column;
 }
 
-form.formConnectFood div input {
+form#formConnectFood div input {
   background: #081828;
   padding: 0.5rem 0.5rem;
   border-top: none;
@@ -1280,7 +1280,7 @@ input:focus {
   border-bottom: 1px solid #f48c06 !important;
 }
 
-form.formConnectFood div textarea {
+form#formConnectFood div textarea {
   background: #081828;
   padding: 0.5rem 0.5rem;
   border-top: none;
@@ -1296,7 +1296,7 @@ textarea:focus {
   border-bottom: 1px solid #f48c06 !important;
 }
 
-form.formConnectFood div button {
+form#formConnectFood div button {
   background: #f9f9f9;
   padding: 0.5rem 0.5rem;
   border: none;
@@ -1311,11 +1311,11 @@ form.formConnectFood div button {
   font-size: 12px;
 }
 
-form.formConnectFood div button:hover {
+form#formConnectFood div button:hover {
   background: #f48c06;
 }
 
-form.formConnectFood div span {
+form#formConnectFood div span {
   color: #f48c06;
   font-size: 12px;
   padding: 0.3rem;
@@ -1346,6 +1346,10 @@ form.formConnectFood div span {
   .footer .footer-top {
     padding: 60px 0;
     padding-top: 20px;
+  }
+
+  form#formConnectFood div button {
+    align-self: start;
   }
 }
 

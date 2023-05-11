@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
     <link rel="stylesheet" href="assets/css/animate.css" />
-    <link rel="stylesheet" href="assets/css/glightbox.min.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
 
 </head>
@@ -162,19 +161,19 @@
                     <div class="row">
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="single-faca-parte wow fadeInUp" data-wow-delay=".2s">
-                                <h3 class="counter"><span id="secondo1" class="countup" cup-end="100">100</span>+</h3>
+                                <h3 class="counter"><span id="doadores">100</span>+</h3>
                                 <p>Doadores</p>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="single-faca-parte wow fadeInUp" data-wow-delay=".4s">
-                                <h3 class="counter"><span id="secondo2" class="countup" cup-end="120">120</span>+</h3>
+                                <h3 class="counter"><span id="instituicoes">120</span>+</h3>
                                 <p>Insituições</p>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="single-faca-parte wow fadeInUp" data-wow-delay=".6s">
-                                <h3 class="counter"><span id="secondo3" class="countup" cup-end="125">125</span>+</h3>
+                                <h3 class="counter"><span id="doacoes">125</span>+</h3>
                                 <p>Doações</p>
                             </div>
                         </div>
@@ -525,7 +524,9 @@
                             </div>
 
                             <div class="col-lg-10 col-md-8 col-12">
-                                <form action="https://api.staticforms.xyz/submit" method="post" class="formConnectFood">
+                                <iframe name="redirect" id="redirect" style="display: none;"></iframe>
+
+                                <form action="https://api.staticforms.xyz/submit" method="post" id="formConnectFood" target="redirect"> 
                                     <div>
                                         <input type="text" name="name" id="formNome" placeholder="Digite seu nome" required>
                                         <span id="spanFormNome">Preencha o nome corretamente, com pelo menos três letas!</span>
@@ -538,17 +539,16 @@
 
                                     <div>
                                         <textarea type="text" name="message" id="formMessage" rows="3" placeholder="Digite sua mensagem" required></textarea>
-                                        <span id="spanFormMessage">Preencha sua mensagem com pelo menos dez caracteres!</span>
+                                        <span id="spanFormMessage"></span>
                                     </div>
 
-                                    <input type="text" name="honeypot" style="display:none">
-                                    <input type="hidden" name="accessKey" value="4fa1733f-5add-419e-868e-c1a0a0328efa">
-                                    <input type="hidden" name="subject" value="Contato via Connect Food Site" />
+                                    <input type="hidden" name="subject">
+                                    <input type="text" name="honeypot" style="display:none">                                    
                                     <input type="hidden" name="replyTo" value="connectFood23@gmail.com">
-                                    <input type="hidden" name="redirectTo" value="http://127.0.0.1:3002/index.html">
+                                    <input type="hidden" name="accessKey" value="4fa1733f-5add-419e-868e-c1a0a0328efa">
 
                                     <div>
-                                        <button type="submit">Enviar</button>
+                                        <button id="submitBtn" type="submit">Enviar</button>
                                     </div>
                                 </form>
                             </div>
