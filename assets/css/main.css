@@ -18,7 +18,6 @@ body {
   text-decoration: none !important;
 }
 
-
 img {
   max-width: 100%;
 }
@@ -1271,6 +1270,7 @@ form.formConnectFood div input {
   border-top: none;
   border-left: none;
   border-right: none;
+  outline: none;
   border-bottom: 1px solid #fff;
   color: white;
   transition: 0.5s all;
@@ -1287,6 +1287,7 @@ form.formConnectFood div textarea {
   border-left: none;
   border-right: none;
   border-bottom: 1px solid #fff;
+  outline: none;
   color: white;
   transition: 0.5s all !important;
 }
@@ -1307,7 +1308,7 @@ form.formConnectFood div button {
   border-radius: 50px;
   width: 30%;
   align-self: end;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 form.formConnectFood div button:hover {
@@ -1318,6 +1319,11 @@ form.formConnectFood div span {
   color: #f48c06;
   font-size: 12px;
   padding: 0.3rem;
+}
+
+#spanFormNome, #spanFormEmail, #spanFormMessage {
+  opacity: 0;
+  transition: 0.5s all;
 }
 
 .footer {
