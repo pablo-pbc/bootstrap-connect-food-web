@@ -213,23 +213,47 @@ const doadores = document.getElementById('doadores')
 const instituicoes = document.getElementById('instituicoes')
 const doacoes = document.getElementById('doacoes')
 
+// Params for REST API
+const urlParamsAPI = ['doacao', 'user']
+
 // REST API for DDI endpoint
-let prefixAPI = 'https://restcountries.com/v3.1/alpha/ar';
+let prefixAPI = `https://connect-food-back.onrender.com/`;
 // Function to fetch the informations from dataBase
-function fetchingDataBaseEveryFiveMin() {
-    fetch(prefixAPI)
+function  fetchingDonationsAPI() {
+    fetch(`${prefixAPI}${urlParamsAPI[0]}`)
         .then((response) => response.json())
         .then((data) => {
-            let root = data[0].idd.root;
-            let sufix = data[0].idd.suffixes;
-            let sigla = data[0].cca2;
-
-            doadores.innerText = root
-            instituicoes.innerText = sufix
-            doacoes.innerText = sigla
+            let donations = data.length;
+            
+            doacoes.innerText = donations
     });
 }
-fetchingDataBaseEveryFiveMin();
+ fetchingDonationsAPI();
 
-// atualizar o valor numérico a cada 5 minutos
-setInterval(fetchingDataBaseEveryFiveMin, 5 * 60 * 1000);
+ function  fetchingUsersTypeAPI() {
+  fetch(`${prefixAPI}${urlParamsAPI[1]}`)
+      .then((response) => response.json())
+      .then((data) => {
+        let typeDonor = 0;
+        let typeReciver = 0;
+
+        for (let index = 0; index < data.length; index++) {
+          
+          if (data[index].type === 'donor') {
+            typeDonor++;
+          } else {
+            typeReciver++;
+          };          
+        };
+
+        doadores.innerText = typeDonor;
+        instituicoes.innerText = typeReciver;
+  });
+}
+fetchingUsersTypeAPI();
+
+
+
+// Requesting API for the past 5 minutes.
+setInterval(fetchingDonationsAPI, 5 * 60 * 1000);
+setInterval(fetchingUsersTypeAPI, 5 * 60 * 1000);
