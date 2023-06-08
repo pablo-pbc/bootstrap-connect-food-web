@@ -238,15 +238,12 @@ function  fetchingDonationsAPI() {
         let typeReceiver = 0;
 
         for (let index = 0; index < data.length; index++) {          
-          if (data[index].type === 'DONOR') {            
-            typeDonor++;
+          if (data[index].type === 'DONOR') {         
+            typeDonor++;            
           } else if (data[index].type === 'RECEIVER') {
             typeReceiver++;
           }        
         };
-
-        typeDonor = 0;
-        typeReceiver = 0;
 
         doadores.innerText = typeDonor;
         instituicoes.innerText = typeReceiver;
