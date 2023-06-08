@@ -235,19 +235,21 @@ function  fetchingDonationsAPI() {
       .then((response) => response.json())
       .then((data) => {
         let typeDonor = 0;
-        let typeReciver = 0;
+        let typeReceiver = 0;
 
-        for (let index = 0; index < data.length; index++) {
-          
-          if (data[index].type === 'donor') {
+        for (let index = 0; index < data.length; index++) {          
+          if (data[index].type === 'DONOR') {            
             typeDonor++;
-          } else {
-            typeReciver++;
-          };          
+          } else if (data[index].type === 'RECEIVER') {
+            typeReceiver++;
+          }        
         };
 
+        typeDonor = 0;
+        typeReceiver = 0;
+
         doadores.innerText = typeDonor;
-        instituicoes.innerText = typeReciver;
+        instituicoes.innerText = typeReceiver;
   });
 }
 fetchingUsersTypeAPI();
